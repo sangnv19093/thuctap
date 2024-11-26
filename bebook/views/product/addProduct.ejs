@@ -1,0 +1,44 @@
+<%- include('../inc/header-user.ejs') %>
+  <div style="margin-top: 80px; height: 100vh; margin-left: 320px; flex: 1">
+    <div class="input-form">
+      <h3 style="text-align: center">Thêm Sân</h3>
+      <form enctype="multipart/form-data" method="POST" action="api/product/addProduct">
+        <div class="mb-3 mt-4">
+          <label class="form-label">Tên Sân:</label>
+          <input class="form-control" required placeholder="Nhập tên Sân bóng" name="name" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Gía:</label>
+          <input class="form-control" required type="number" placeholder="Nhập giá gốc" name="realPrice" />
+        </div>
+
+        <label class="form-label">Loại Sân:</label>
+        <div style="display: flex" class="radio-group">
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="category" value="san5" checked />Sân 5
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="category" value="san7" />Sân 7
+            <label class="form-check-label" for="radio2"></label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="category" value="san11" />Sân 11
+            <label class="form-check-label"></label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Chọn ảnh</label>
+          <input type="file" class="form-control" required name="image" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mô Tả Sân</label>
+          <input class="form-control" required placeholder="Nhập mô tả cho sân bóng" name="description" />
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm Sân</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('../inc/footer.ejs') %>
